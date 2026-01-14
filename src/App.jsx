@@ -637,41 +637,44 @@ export default function App() {
         {activeTab === 'portfolio' && (
           <div className="portfolio-container">
 
-            {/* Portfolio Summary Cards at the top */}
-            <div className="portfolio-summary-top">
-              <div className="summary-card">
-                <span className="summary-label">
-                  <FiDollar className="summary-icon" />
-                  Total Value
-                </span>
-                <span className="summary-value">
-                  {currency === 'usd' ? '$' : '₨'} {portfolioValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                </span>
-              </div>
+{/* Portfolio Summary Cards at the top */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+  {/* Total Value */}
+  <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-4 flex flex-col">
+    <span className="flex items-center text-gray-500 dark:text-gray-300 font-medium mb-2">
+      <FiDollar className="mr-2 text-xl" />
+      Total Value
+    </span>
+    <span className="text-2xl font-bold text-gray-900 dark:text-white">
+      {currency === 'usd' ? '$' : '₨'} {portfolioValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+    </span>
+  </div>
 
-              <div className="summary-card">
-                <span className="summary-label">
-                  <FiTrendingUp className="summary-icon" />
-                  Total Invested
-                </span>
-                <span className="summary-value">
-                  {currency === 'usd' ? '$' : '₨'} {totalInvested.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                </span>
-              </div>
+  {/* Total Invested */}
+  <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-4 flex flex-col">
+    <span className="flex items-center text-gray-500 dark:text-gray-300 font-medium mb-2">
+      <FiTrendingUp className="mr-2 text-xl" />
+      Total Invested
+    </span>
+    <span className="text-2xl font-bold text-gray-900 dark:text-white">
+      {currency === 'usd' ? '$' : '₨'} {totalInvested.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+    </span>
+  </div>
 
-              <div className="summary-card">
-                <span className="summary-label">
-                  <FiPercent className="summary-icon" />
-                  Profit/Loss
-                </span>
-                <span className={`summary-value ${totalProfitLoss >= 0 ? 'positive' : 'negative'}`}>
-                  {currency === 'usd' ? '$' : '₨'} {Math.abs(totalProfitLoss).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                  <span className="summary-percent">
-                    ({totalProfitLossPercent.toFixed(2)}%)
-                  </span>
-                </span>
-              </div>
-            </div>
+  {/* Profit/Loss */}
+  <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-4 flex flex-col">
+    <span className="flex items-center text-gray-500 dark:text-gray-300 font-medium mb-2">
+      <FiPercent className="mr-2 text-xl" />
+      Profit/Loss
+    </span>
+    <span className={`text-2xl font-bold ${totalProfitLoss >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+      {currency === 'usd' ? '$' : '₨'} {Math.abs(totalProfitLoss).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+      <span className="ml-1 text-sm text-gray-500 dark:text-gray-400">
+        ({totalProfitLossPercent.toFixed(2)}%)
+      </span>
+    </span>
+  </div>
+</div>
 
             {/* Add to Portfolio Form */}
             <div className="add-portfolio-form">
