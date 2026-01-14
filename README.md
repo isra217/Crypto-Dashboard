@@ -15,7 +15,8 @@ The project focuses on building a **responsive, mobile-friendly crypto tracking 
 - **Interactive Charts** – Visualize price trends over time.  
 - **Price Alerts** – Set custom alerts for coins to stay updated.  
 - **Responsive Design** – Works on desktop, tablet, and mobile devices.  
-- **User-Friendly Interface** – Easy navigation with tabs, tables, and cards.  
+- **User-Friendly Interface** – Easy navigation with tabs, tables, and cards.
+
 
 ---
 
