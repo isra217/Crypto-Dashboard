@@ -37,7 +37,7 @@ The project focuses on building a **responsive, mobile-friendly crypto tracking 
 ---
 
 ## Live Github Link of Project
-link: 
+link: https://isra217.github.io/Crypto-Dashboard/
 
 ---
 
